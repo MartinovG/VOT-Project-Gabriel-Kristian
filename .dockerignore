@@ -1,0 +1,14 @@
+node_modules/
+npm-debug.log
+.DS_Store
+.env
+.git/
+.husky/
+.github/
+.eslint*
+test/
+tests/
+coverage/
+Dockerfile
+.dockerignore
+package-lock.json
