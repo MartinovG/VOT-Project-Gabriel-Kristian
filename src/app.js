@@ -16,15 +16,12 @@ app.use(helmet({
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static('public'));
 
-app.use('/api', apiRoutes);
-
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'healthy', uptime: process.uptime() });
-});
-
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Internal Server Error' });
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
+
+export default app;
