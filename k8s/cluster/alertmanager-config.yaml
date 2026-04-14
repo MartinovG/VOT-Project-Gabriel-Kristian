@@ -17,12 +17,3 @@ spec:
             name: discord-webhook-url
             key: address
           sendResolved: true
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: discord-webhook-url
-  namespace: monitoring
-type: Opaque
-stringData:
-  address: "https://discord.com/api/webhooks/1493603255043752058/nTtSAeR9sv1xJEkWBNCeJ8CPnqDRgxI5Mu-YmBKBFp_jDxmnbqY1maNUxcBnTqnw6Xbq"
