@@ -5,7 +5,4 @@ resources:
   - observability.yaml
   - weave-gitops-dashboard.yaml
   - app-kustomization.yaml
-  - alertmanager-config.yaml
-  - sealed-discord-secret.yaml
   - postgres.yaml
-  - sealed-db-secret.yaml
