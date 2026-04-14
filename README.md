@@ -69,15 +69,15 @@ We use HashiCorp **Terraform** to provision the core Kubernetes namespace infras
 To rotate or add a new encrypted secret (like the Discord Webhook):
 
 1. **Install Kubeseal CLI (macOS)**
-   ```sh
+   ```
    brew install kubeseal
    ```
 2. **Fetch the Public Certificate**
-   ```sh
+   ```
    kubeseal --fetch-cert --controller-name sealed-secrets-controller --controller-namespace sealed-secrets > pub-cert.pem
    ```
 3. **Encrypt your Secret**
-   ```sh
+   ```
    kubectl create secret generic my-secret --namespace monitoring --from-literal=token="super-secret" --dry-run=client -o yaml | kubeseal --cert pub-cert.pem --format yaml > sealed-secret.yaml
    ```
 4. **Deploy**

@@ -34,7 +34,6 @@ spec:
         namespace: flux-system
       interval: 1h0m0s
   values:
-    # Disable node-exporter securely since Docker Desktop VM doesn't expose host metrics
     nodeExporter:
       enabled: false
     alertmanager:
@@ -45,7 +44,6 @@ spec:
           type: None
     grafana:
       adminPassword: "admin"
-      # Enable dashboard provisioning for Loki if needed later
       additionalDataSources:
         - name: Loki
           type: loki
