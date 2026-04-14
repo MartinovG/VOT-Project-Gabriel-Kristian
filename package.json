@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js",
-    "test": "node --test tests/**/*.test.js",
+    "test": "node --test tests/",
     "lint": "eslint src/",
     "secretlint": "secretlint \"**/*\"",
     "prepare": "husky"
