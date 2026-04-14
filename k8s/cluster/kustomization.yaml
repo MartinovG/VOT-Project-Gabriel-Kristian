@@ -7,3 +7,5 @@ resources:
   - app-kustomization.yaml
   - alertmanager-config.yaml
   - sealed-discord-secret.yaml
+  - postgres.yaml
+  - sealed-db-secret.yaml
