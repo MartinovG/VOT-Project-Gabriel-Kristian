@@ -29,7 +29,7 @@ pipeline {
                 script {
                     echo "Installing NPM dependencies"
                 }
-                sh 'npm ci'
+                sh 'npm ci --ignore-scripts'
             }
         }
 
