@@ -34,12 +34,9 @@ spec:
         namespace: flux-system
       interval: 1h0m0s
   values:
-    prometheus-node-exporter:
-      hostRootFsMount: false
-      tolerations:
-        - key: "node-role.kubernetes.io/master"
-          operator: "Exists"
-          effect: "NoSchedule"
+    # Disable node-exporter securely since Docker Desktop VM doesn't expose host metrics
+    nodeExporter:
+      enabled: false
     grafana:
       adminPassword: "admin"
       # Enable dashboard provisioning for Loki if needed later
