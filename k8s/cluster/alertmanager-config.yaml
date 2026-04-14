@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: discord-alerts
+  namespace: monitoring
+spec:
+  route:
+    receiver: 'discord'
+    groupBy: ['alertname', 'job']
+    groupWait: 30s
+    groupInterval: 5m
+    repeatInterval: 12h
+  receivers:
+    - name: 'discord'
+      discordConfigs:
+        - apiURL:
+            name: discord-webhook-url
+            key: address
+          sendResolved: true
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: discord-webhook-url
+  namespace: monitoring
+type: Opaque
+stringData:
+  address: "https://discord.com/api/webhooks/PLACEHOLDER/PLACEHOLDER"
