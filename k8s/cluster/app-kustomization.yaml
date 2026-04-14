@@ -8,6 +8,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./k8s
+  path: ./k8s/app
   prune: true
   targetNamespace: default
