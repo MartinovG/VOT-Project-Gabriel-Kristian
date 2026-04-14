@@ -11,4 +11,3 @@ tests/
 coverage/
 Dockerfile
 .dockerignore
-package-lock.json
