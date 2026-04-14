@@ -37,6 +37,12 @@ spec:
     # Disable node-exporter securely since Docker Desktop VM doesn't expose host metrics
     nodeExporter:
       enabled: false
+    alertmanager:
+      alertmanagerSpec:
+        alertmanagerConfigSelector:
+          matchLabels: {}
+        alertmanagerConfigMatcherStrategy:
+          type: None
     grafana:
       adminPassword: "admin"
       # Enable dashboard provisioning for Loki if needed later
