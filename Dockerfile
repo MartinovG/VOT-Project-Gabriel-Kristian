@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install dependencies using cache mounts for speed
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev --ignore-scripts
 
 # Copy application files
 COPY src/ ./src/
